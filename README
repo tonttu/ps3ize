@@ -1,0 +1,9 @@
+fixes/{rename,fixclp}.rb do the same thing as a program called "AVCHDMe".
+  For example SmartLabs tsMuxeR makes broken files that can't be played on
+  PS3 without applying these hacks.
+
+  rename.rb renames all files in a AVCHD directory to use 8.3 AVCHC
+  filenames (required on PS3)
+
+  fixclp.rb ensures that the clipinfo files (clipinf/*cpi) have a correct
+  clip length in their headers (M2TS packet count)
