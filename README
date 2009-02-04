@@ -9,3 +9,5 @@ fixes/{rename,fixclp}.rb do the same thing as a program called "AVCHDMe".
   clip length in their headers (M2TS packet count)
 
 convert/m2ts_to_ts.c converts M2TS/MTS files to TS files.
+
+avchd/ is a AVCHD dir / Blu-ray authoring/muxing tool. Unusable at the moment.
