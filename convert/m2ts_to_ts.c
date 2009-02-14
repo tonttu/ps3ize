@@ -12,10 +12,17 @@
  */
 
 #include <unistd.h>
+#include <stdio.h>
 
 int main() {
-  char buffer[192];
-  while (read(0, buffer, 192) == 192)
-    write(1, buffer+4, 188);
-  return 0;
+	char buffer[192];
+	unsigned int count = 0;
+	while (read(0, buffer, 192) == 192) {
+		write(1, buffer+4, 188);
+		if (!(count & 0xFFF))
+			fprintf(stderr, "\r%.0f MB", count*188.0f/1024.0f/1024.0f);
+		++count;
+	}
+	fprintf(stderr, "\r%.1f MB, %u packets\n", count*188.0f/1024.0f/1024.0f, count);
+	return 0;
 }
